@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forever Love | Every Paw Matters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ===== DESIGN (CSS) — everything is inside this file ===== -->
+  <style>
+    :root {
+      --bg: #0f1b1e;
+      --card: #16262a;
+      --mint: #9ff0c9;
+      --text: #f2f7f5;
+      --muted: #9fb3ad;
+      --danger: #ff8a8a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(159, 240, 201, 0.12), transparent 40%),
+        radial-gradient(circle at 10% 80%, rgba(80, 160, 200, 0.10), transparent 40%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 { font-family: "Outfit", sans-serif; }
+
+    .mint { color: var(--mint); }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      border-bottom: 1px solid #ffffff15;
+      position: sticky;
+      top: 0;
+      background: rgba(15, 27, 30, 0.9);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: "Outfit", sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 16px;
+    }
+
+    nav a:hover { color: var(--mint); }
+
+    .btn {
+      display: inline-block;
+      background: var(--mint);
+      color: #0f1b1e;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid #ffffff45;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 7%;
+    }
+
+    .tag {
+      color: var(--mint);
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.1;
+      margin: 16px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 4px solid #ffffff15;
+    }
+
+    /* ---------- Sections ---------- */
+    .section { padding: 80px 7%; }
+
+    .section h2 {
+      font-size: 38px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #ffffff12;
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .card h3 { margin: 10px 0; }
+    .card p { color: var(--muted); }
+    .icon { font-size: 32px; }
+
+    /* ---------- Dashboard ---------- */
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .pet-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid #ffffff30;
+      font-size: 16px;
+      margin: 8px 0 16px;
+    }
+
+    .map {
+      height: 180px;
+      border-radius: 16px;
+      margin: 12px 0;
+      background:
+        linear-gradient(#ffffff10 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff10 1px, transparent 1px),
+        #1d3a36;
+      background-size: 30px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      margin: 10px 0;
+    }
+
+    .stats b { color: var(--mint); }
+
+    .message {
+      margin-top: 14px;
+      font-weight: 500;
+      color: var(--mint);
+    }
+
+    .message.alert { color: var(--danger); }
+
+    .disclaimer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 20px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #ffffff15;
+      color: var(--muted);
+    }
+
+    /* ---------- Phone screens ---------- */
+    @media (max-width: 750px) {
+      .navbar { flex-wrap: wrap; gap: 12px; }
+      nav { order: 3; width: 100%; text-align: center; }
+      .hero, .dashboard, .feature-grid { grid-template-columns: 1fr; }
+      .hero img { height: 300px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <a href="#home" class="logo">🐾 Forever<span class="mint">Love.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+    <a href="#dashboard" class="btn">Explore app ↗</a>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div>
+      <p class="tag">✦ SMART PET SAFETY, REIMAGINED</p>
+      <h1>Because their<br>world is <span class="mint">your world.</span></h1>
+      <p>More than tracking. A smarter way to care for the little lives that make yours special.</p>
+      <div class="hero-actions">
+        <a href="#dashboard" class="btn">Explore the dashboard →</a>
+        <a href="#features" class="btn btn-outline">Discover features</a>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=800" alt="A happy golden retriever">
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features">
+    <h2>Everything your pet <span class="mint">needs</span></h2>
+    <p class="section-intro">Simple tools to keep every paw safe and happy.</p>
+
+    <div class="feature-grid">
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>Live Location</h3>
+        <p>See where your pet was last spotted on a simple map.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>Safe Zones</h3>
+        <p>Get an alert when your pet leaves its usual area.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔋</div>
+        <h3>Battery Monitor</h3>
+        <p>Keep track of the smart collar's battery at a glance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DASHBOARD ===== -->
+  <section class="section" id="dashboard">
+    <h2>Your pet <span class="mint">dashboard</span></h2>
+    <p class="section-intro">A sample tracking experience for your furry family member.</p>
+
+    <div class="dashboard">
+      <!-- Pet profile -->
+      <div class="card">
+        <img id="petImage" class="pet-photo" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600" alt="Your pet">
+        <p class="tag">DEMO PROFILE</p>
+        <h3 id="petName">Buddy</h3>
+        <label for="petSelect">Choose a pet</label>
+        <select id="petSelect">
+          <option value="Buddy">Buddy</option>
+          <option value="Luna">Luna</option>
+        </select>
+        <button id="lostButton" class="btn btn-outline">Activate Lost Pet Mode</button>
+        <p id="lostMessage" class="message"></p>
+      </div>
+
+      <!-- Location -->
+      <div class="card">
+        <p class="tag">LOCATION OVERVIEW</p>
+        <h3>Last known location</h3>
+        <label for="placeSelect">Choose a sample location</label>
+        <select id="placeSelect">
+          <option>Greenwood Park</option>
+          <option>Sunshine Gardens</option>
+          <option>Central Pet Park</option>
+          <option>Riverside Park</option>
+        </select>
+        <div class="map">🐾</div>
+        <div class="stats">
+          <span>Battery: <b>85%</b></span>
+          <span>Status: <b>Demo mode</b></span>
+        </div>
+        <button id="locationButton" class="btn">Refresh location ↻</button>
+        <p id="locationResult" class="message">Your pet's sample location is ready.</p>
+      </div>
+    </div>
+
+    <p class="disclaimer">This is a website prototype. Location and battery values are sample data. No real GPS device is connected.</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <h3>Every paw deserves a safe return. 🐾</h3>
+    <p>© 2026 Forever Love · A student-built pet safety project</p>
+  </footer>
+
+  <!-- ===== BUTTONS & INTERACTION (JavaScript) ===== -->
+  <script>
+    const pets = {
+      Buddy: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600",
+      Luna: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600"
+    };
+
+    const petSelect = document.getElementById("petSelect");
+    const petName = document.getElementById("petName");
+    const petImage = document.getElementById("petImage");
+    const placeSelect = document.getElementById("placeSelect");
+    const locationButton = document.getElementById("locationButton");
+    const locationResult = document.getElementById("locationResult");
+    const lostButton = document.getElementById("lostButton");
+    const lostMessage = document.getElementById("lostMessage");
+
+    petSelect.addEventListener("change", function () {
+      const pet = petSelect.value;
+      petName.textContent = pet;
+      petImage.src = pets[pet];
+      locationResult.textContent = pet + "'s sample location is ready.";
+    });
+
+    locationButton.addEventListener("click", function () {
+      locationResult.textContent =
+        "📍 " + petSelect.value + " was last seen at " + placeSelect.value + ".";
+    });
+
+    let lostMode = false;
+    lostButton.addEventListener("click", function () {
+      lostMode = !lostMode;
+      if (lostMode) {
+        lostMessage.textContent = "⚠ LOST PET MODE ACTIVE — this is a demo alert.";
+        lostMessage.classList.add("alert");
+        lostButton.textContent = "Deactivate Lost Pet Mode";
+      } else {
+        lostMessage.textContent = "Lost Pet Mode is off.";
+        lostMessage.classList.remove("alert");
+        lostButton.textContent = "Activate Lost Pet Mode";
+      }
+    });
+  </script>
+
+</body>
+</html>
