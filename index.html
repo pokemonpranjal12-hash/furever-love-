@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forever Love | Every Paw Matters</title>
+  <title>Furever Love | Every Paw Matters</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- ===== DESIGN (CSS) — everything is inside this file ===== -->
@@ -11,7 +11,7 @@
     :root {
       --bg: #0f1b1e;
       --card: #16262a;
-      --mint: #9ff0c9;
+      --mint: #ffb38a;
       --text: #f2f7f5;
       --muted: #9fb3ad;
       --danger: #ff8a8a;
@@ -249,7 +249,7 @@
 
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
-    <a href="#home" class="logo">🐾 Forever<span class="mint">Love.</span></a>
+    <a href="#home" class="logo">🐾 Furever<span class="mint">Love.</span></a>
     <nav>
       <a href="#home">Home</a>
       <a href="#features">Features</a>
@@ -262,7 +262,7 @@
   <section class="hero" id="home">
     <div>
       <p class="tag">✦ SMART PET SAFETY, REIMAGINED</p>
-      <h1>Because their<br>world is <span class="mint">your world.</span></h1>
+      <h1>No paw<br>left <span class="mint">behind.</span></h1>
       <p>More than tracking. A smarter way to care for the little lives that make yours special.</p>
       <div class="hero-actions">
         <a href="#dashboard" class="btn">Explore the dashboard →</a>
@@ -306,11 +306,11 @@
       <div class="card">
         <img id="petImage" class="pet-photo" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600" alt="Your pet">
         <p class="tag">DEMO PROFILE</p>
-        <h3 id="petName">Buddy</h3>
+        <h3 id="petName">Bruno</h3>
         <label for="petSelect">Choose a pet</label>
         <select id="petSelect">
-          <option value="Buddy">Buddy</option>
-          <option value="Luna">Luna</option>
+          <option value="Bruno">Bruno</option>
+          <option value="Simba">Simba</option>
         </select>
         <button id="lostButton" class="btn btn-outline">Activate Lost Pet Mode</button>
         <p id="lostMessage" class="message"></p>
@@ -342,15 +342,15 @@
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <h3>Every paw deserves a safe return. 🐾</h3>
-    <p>© 2026 Forever Love · A student-built pet safety project</p>
+    <h3>Made with love for Bruno and Simba. 🐾</h3>
+    <p>© 2026 Furever Love · A student-built pet safety project</p>
   </footer>
 
   <!-- ===== BUTTONS & INTERACTION (JavaScript) ===== -->
   <script>
     const pets = {
-      Buddy: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600",
-      Luna: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600"
+      Bruno: "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600",
+      Simba: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600"
     };
 
     const petSelect = document.getElementById("petSelect");
